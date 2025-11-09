@@ -7,13 +7,13 @@
   <meta name="description" content="Advocating for a privacy‑preserving biometric access system at Florida State University—protecting students while preserving privacy." />
   <style>
     :root{
-      --bg:#0b1020;            /* deep navy */
-      --panel:#111832;         /* card bg */
-      --muted:#a0abc0;         /* muted text */
-      --text:#f4f7ff;          /* main text */
-      --accent:#6ee7b7;        /* mint */
-      --accent-2:#60a5fa;      /* blue */
-      --ring:#2a3358;          /* subtle stroke */
+      --bg:#4a0f23;            /* FSU Garnet base */
+      --panel:#3b0c1c;         /* deeper garnet panel */
+      --muted:#E8DCC3;         /* muted gold */
+      --text:#fff8ef;          /* warm light */
+      --accent:#CEB888;        /* FSU Gold */
+      --accent-2:#782F40;      /* FSU Garnet */
+      --ring:#5f1a2b;          /* subtle stroke */
       --good:#34d399;          /* green */
       --warn:#f59e0b;          /* amber */
       --bad:#f87171;           /* red */
@@ -25,7 +25,7 @@
     *{box-sizing:border-box}
     body{
       margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background:linear-gradient(180deg,#0b1020 0%, #0e1630 100%);
+      color:var(--text); background:linear-gradient(180deg,#4a0f23 0%, #2a0814 100%);
     }
     a{color:var(--accent)}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
@@ -37,7 +37,7 @@
     }
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
     .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
-    .brand-logo{width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%); box-shadow:var(--shadow)}
+    .brand-logo{width:36px; height:36px; border-radius:999px; background:radial-gradient(circle at 30% 30%, var(--accent) 0%, #f5e7c7 30%, var(--accent) 60%, var(--accent-2) 100%); box-shadow:var(--shadow); border:2px solid var(--accent)}
     .brand h1{font-size:18px; margin:0}
     .menu{display:flex; gap:14px; flex-wrap:wrap}
     .menu a{display:inline-block; text-decoration:none; color:var(--text); padding:8px 12px; border-radius:10px; border:1px solid transparent}
@@ -52,11 +52,11 @@
     .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px}
     .lead{font-size:22px; line-height:1.45; color:#e9eeff}
     .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{appearance:none; border:none; padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:600; 
-      color:#071023; background:var(--accent); box-shadow:0 6px 16px rgba(110,231,183,.25)}
-    .btn.alt{background:transparent; color:var(--text); border:1px solid #2a365f}
+    .btn{appearance:none; border:none; padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:700; letter-spacing:.02em;
+      color:#3b0c1c; background:var(--accent); box-shadow:0 6px 16px rgba(206,184,136,.35)}
+    .btn.alt{background:transparent; color:var(--accent); border:1px solid var(--accent);}
     .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .pill{padding:8px 12px; border-radius:999px; background:#0f1836; border:1px solid #253161; color:#cfe1ff; font-size:12px}
+    .pill{padding:8px 12px; border-radius:999px; background:#3b0c1c; border:1px solid #253161; color:#f7e9c8; font-size:12px}
 
     /* Sections */
     section{padding:42px 0}
@@ -73,12 +73,12 @@
     .fact b{color:#eaf2ff}
 
     .stat-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .stat{padding:18px; border:1px solid #24305a; border-radius:14px; background:#0f1836}
+    .stat{padding:18px; border:1px solid #24305a; border-radius:14px; background:#3b0c1c}
     .stat .num{font-size:26px; font-weight:800}
     .stat .lab{color:var(--muted)}
 
     .timeline{display:grid; gap:14px}
-    .step{padding:18px; border:1px solid #24305a; border-radius:14px; background:#0f1836}
+    .step{padding:18px; border:1px solid #24305a; border-radius:14px; background:#3b0c1c}
 
     /* Resources */
     .resource{padding:16px; border:1px dashed #31406f; border-radius:14px}
@@ -91,6 +91,12 @@
       .stat-cards{grid-template-columns:1fr}
       .grid.cols-3{grid-template-columns:1fr}
     }
+  .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .player, .embed, .download{padding:16px;border:1px solid var(--ring);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--ring);cursor:pointer}
+    .gallery figcaption{font-size:12px;color:var(--muted);margin-top:6px}
+    @media(max-width:900px){.media-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -131,6 +137,8 @@
           </div>
         </div>
         <div class="card pad">
+          <!-- If you upload fsu-seal.png to your repo root, this seal will show -->
+          <img src="fsu-seal.png" alt="FSU seal" style="width:110px;height:auto;display:block;margin:0 0 12px 0;filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));">
           <h3 style="margin:0 0 10px">Why It Matters</h3>
           <ul>
             <li>Faster and more reliable than ID cards.</li>
@@ -298,11 +306,17 @@
             <h3 style="margin-top:18px">Contact</h3>
             <p>Have a question, concern, or suggestion? Send a message:</p>
             <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll reply in 2–3 days.');" aria-label="Contact form">
-              <label>Name<br/><input required type="text" placeholder="Your name" style="width:100%; padding:10px; border-radius:10px; border:1px solid #2a365f; background:#0f1836; color:var(--text)"></label>
+              <label>Name<br/><input required type="text" placeholder="Your name" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)"></label>
               <br/><br/>
-              <label>Email<br/><input required type="email" placeholder="you@fsu.edu" style="width:100%; padding:10px; border-radius:10px; border:1px solid #2a365f; background:#0f1836; color:var(--text)"></label>
+              <label>Email<br/><input required type="email" placeholder="you@fsu.edu" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)"></label>
               <br/><br/>
-              <label>Message<br/><textarea required rows="5" placeholder="How can we help?" style="width:100%; padding:10px; border-radius:10px; border:1px solid #2a365f; background:#0f1836; color:var(--text)"></textarea></label>
+              <label>Message<br/><textarea required rows="5" placeholder="How can we help?" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)"></textarea></label>
+              <br/><br/>
+              <button class="btn" type="submit">Send</button>
+              <br/>
+              <label>Attach media (optional)<br/>
+                <input type="file" accept="image/*,audio/*,application/pdf" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)">
+              </label>
               <br/><br/>
               <button class="btn" type="submit">Send</button>
             </form>
@@ -319,6 +333,65 @@
         <div class="resource card">
           <strong>Electronic Frontier Foundation (EFF).</strong> “Biometrics and Privacy.”
           <div><a href="https://www.eff.org/issues/biometrics" target="_blank" rel="noopener">eff.org/issues/biometrics</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTIMODAL: Watch & Listen -->
+    <section id="media">
+      <div class="wrap">
+        <h2 class="h">Watch & Listen</h2>
+        <p class="sub">Short video explainer, student voices, and media gallery. (Upload your own files to the repo root as noted below.)</p>
+        <div class="media-grid">
+          <div class="player card">
+            <h3 style="margin:12px 16px 0">Campus Access Explainer (Video)</h3>
+            <!-- Upload a file named campus.mp4 and optional poster campus-poster.jpg -->
+            <video controls preload="metadata" style="width:100%;border-bottom-left-radius:14px;border-bottom-right-radius:14px;display:block" poster="campus-poster.jpg">
+              <source src="campus.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="player card pad">
+            <h3>YouTube Overview</h3>
+            <!-- Replace the src with your own YouTube video ID -->
+            <div class="embed" style="padding:0;border:none;background:transparent">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="sub" style="margin-top:8px">Swap the video by changing the <code>src</code> to your own YouTube link.</p>
+          </div>
+          <div class="player card pad">
+            <h3>Student Voices (Audio)</h3>
+            <!-- Upload student-voices.mp3 to repo root -->
+            <audio controls preload="none" style="width:100%">
+              <source src="student-voices.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <p class="sub">Short clips describing convenience, safety, and privacy expectations.</p>
+          </div>
+          <div class="download card pad">
+            <h3>Download: Privacy Whitepaper (PDF)</h3>
+            <!-- Upload privacy-policy.pdf to repo root -->
+            <p>Details on the data flow, retention limits, and deletion guarantees.</p>
+            <a class="btn" href="privacy-policy.pdf" download>Download PDF</a>
+          </div>
+        </div>
+
+        <h3 style="margin-top:26px">Image Gallery</h3>
+        <p class="sub">Campus spaces and prototype kiosks. Click an image to open full size.</p>
+        <div class="gallery">
+          <figure>
+            <!-- Upload gallery-1.jpg -->
+            <img src="gallery-1.jpg" alt="Dorm lobby turnstiles prototype" loading="lazy" onclick="window.open(this.src,'_blank')">
+            <figcaption>Dorm lobby prototype</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery-2.jpg" alt="Leach Center entry" loading="lazy" onclick="window.open(this.src,'_blank')">
+            <figcaption>Leach Center entry</figcaption>
+          </figure>
+          <figure>
+            <img src="gallery-3.jpg" alt="Computer lab check-in station" loading="lazy" onclick="window.open(this.src,'_blank')">
+            <figcaption>Computer lab check‑in</figcaption>
+          </figure>
         </div>
       </div>
     </section>
