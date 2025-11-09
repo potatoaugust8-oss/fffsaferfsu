@@ -7,106 +7,41 @@
   <meta name="description" content="Advocating for a privacy‑preserving biometric access system at Florida State University—protecting students while preserving privacy." />
   <style>
     :root{
-      --bg:#4a0f23;            /* FSU Garnet base */
-      --panel:#3b0c1c;         /* deeper garnet panel */
-      --muted:#E8DCC3;         /* muted gold */
-      --text:#fff8ef;          /* warm light */
-      --accent:#CEB888;        /* FSU Gold */
-      --accent-2:#782F40;      /* FSU Garnet */
-      --ring:#5f1a2b;          /* subtle stroke */
-      --good:#34d399;          /* green */
-      --warn:#f59e0b;          /* amber */
-      --bad:#f87171;           /* red */
-      --maxw:1100px;
+      --bg:#4a0f23;
+      --panel:#3b0c1c;
+      --muted:#E8DCC3;
+      --text:#fff8ef;
+      --accent:#CEB888;
+      --accent-2:#782F40;
+      --ring:#5f1a2b;
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.35);
+      --maxw:1100px;
     }
-    html{scroll-behavior:smooth}
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background:linear-gradient(180deg,#4a0f23 0%, #2a0814 100%);
-    }
-    a{color:var(--accent)}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); 
-      background:rgba(11,16,32,.6); border-bottom:1px solid #1b2242;
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
-    .brand-logo{width:36px; height:36px; border-radius:999px; background:radial-gradient(circle at 30% 30%, var(--accent) 0%, #f5e7c7 30%, var(--accent) 60%, var(--accent-2) 100%); box-shadow:var(--shadow); border:2px solid var(--accent)}
-    .brand h1{font-size:18px; margin:0}
-    .menu{display:flex; gap:14px; flex-wrap:wrap}
-    .menu a{display:inline-block; text-decoration:none; color:var(--text); padding:8px 12px; border-radius:10px; border:1px solid transparent}
-    .menu a:hover{border-color:#26305a; background:#0d152f}
-
-    /* Hero */
-    .hero{padding:72px 0 40px}
-    .hero-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:24px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid var(--ring); border-radius:var(--radius); box-shadow:var(--shadow)}
-    .card.pad{padding:28px}
-    h2{margin:0 0 10px}
-    .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px}
-    .lead{font-size:22px; line-height:1.45; color:#e9eeff}
-    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{appearance:none; border:none; padding:12px 16px; border-radius:12px; cursor:pointer; font-weight:700; letter-spacing:.02em;
-      color:#3b0c1c; background:var(--accent); box-shadow:0 6px 16px rgba(206,184,136,.35)}
-    .btn.alt{background:transparent; color:var(--accent); border:1px solid var(--accent);}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .pill{padding:8px 12px; border-radius:999px; background:#3b0c1c; border:1px solid #253161; color:#f7e9c8; font-size:12px}
-
-    /* Sections */
-    section{padding:42px 0}
-    section .h{font-size:28px; margin:0 0 6px}
-    section .sub{color:var(--muted); margin:0 0 20px}
-    .grid{display:grid; gap:18px}
-    .grid.cols-2{grid-template-columns:1fr 1fr}
-    .grid.cols-3{grid-template-columns:repeat(3, 1fr)}
-
-    ul{margin:0; padding-left:18px}
-    li{margin:8px 0}
-
-    .fact{display:flex; gap:14px; align-items:flex-start; padding:14px; border:1px solid #24305a; border-radius:14px}
-    .fact b{color:#eaf2ff}
-
-    .stat-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
-    .stat{padding:18px; border:1px solid #24305a; border-radius:14px; background:#3b0c1c}
-    .stat .num{font-size:26px; font-weight:800}
-    .stat .lab{color:var(--muted)}
-
-    .timeline{display:grid; gap:14px}
-    .step{padding:18px; border:1px solid #24305a; border-radius:14px; background:#3b0c1c}
-
-    /* Resources */
-    .resource{padding:16px; border:1px dashed #31406f; border-radius:14px}
-
-    footer{padding:40px 0 60px; color:var(--muted); text-align:center}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .hero-grid, .grid.cols-2{grid-template-columns:1fr}
-      .stat-cards{grid-template-columns:1fr}
-      .grid.cols-3{grid-template-columns:1fr}
-    }
-  .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .player, .embed, .download{padding:16px;border:1px solid var(--ring);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--ring);cursor:pointer}
-    .gallery figcaption{font-size:12px;color:var(--muted);margin-top:6px}
-    @media(max-width:900px){.media-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+    body{margin:0;font-family:system-ui,sans-serif;background:linear-gradient(180deg,#4a0f23 0%,#2a0814 100%);color:var(--text);}
+    header{position:sticky;top:0;z-index:50;background:rgba(58,12,28,.9);backdrop-filter:blur(6px);border-bottom:2px solid var(--accent-2);}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);}
+    .brand img{height:40px;width:auto;border-radius:50%;border:2px solid var(--accent);background:var(--accent-2);}
+    .brand h1{font-size:20px;margin:0;}
+    .menu{display:flex;gap:14px;flex-wrap:wrap;}
+    .menu a{text-decoration:none;color:var(--text);padding:6px 10px;border-radius:10px;border:1px solid transparent;}
+    .menu a:hover{border-color:var(--accent);background:#5b1c2e;}
+    section{padding:42px 0;}
+    .card{background:rgba(255,255,255,.03);border:1px solid var(--ring);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);}
+    h2{margin-top:0;color:var(--accent);}
+    footer{text-align:center;padding:40px 0;color:var(--muted);border-top:1px solid var(--accent-2);}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
-      <a href="#home" class="brand" aria-label="Safer FSU home">
-        <div class="brand-logo" aria-hidden="true"></div>
+      <a href="#home" class="brand">
+        <img src="fsu-seal.png" alt="FSU seal">
         <h1>Safer FSU</h1>
       </a>
-      <nav class="menu" aria-label="Primary">
+      <nav class="menu">
         <a href="#home">Home</a>
         <a href="#why">Why Biometrics</a>
         <a href="#privacy">Privacy & Ethics</a>
@@ -118,280 +53,67 @@
   </header>
 
   <main>
-    <!-- HOME / HERO -->
-    <section id="home" class="hero">
-      <div class="wrap hero-grid">
-        <div class="card pad">
-          <div class="kicker">Protecting Students, Preserving Privacy</div>
-          <h2 class="h">A safer, smoother campus—without sacrificing privacy.</h2>
-          <p class="lead">This project advocates for a privacy‑preserving biometric access system at Florida State University. The goal is to improve campus safety and convenience while protecting personal data.</p>
-          <div class="badges">
-            <span class="pill">Non‑transferable security</span>
-            <span class="pill">Faster access</span>
-            <span class="pill">Encrypted templates</span>
-            <span class="pill">Opt‑in only</span>
-          </div>
-          <div class="cta">
-            <a class="btn" href="#rollout">See the Plan</a>
-            <a class="btn alt" href="#involved">Share Feedback</a>
-          </div>
+    <section id="home">
+      <div class="wrap">
+        <div class="card">
+          <h2>Protecting Students, Preserving Privacy</h2>
+          <p>This advocacy site promotes a privacy‑preserving biometric access system at Florida State University. It emphasizes safety, convenience, and ethical use of data to protect the student body while enhancing campus access systems.</p>
         </div>
-        <div class="card pad">
-          <!-- If you upload fsu-seal.png to your repo root, this seal will show -->
-          <img src="fsu-seal.png" alt="FSU seal" style="width:110px;height:auto;display:block;margin:0 0 12px 0;filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));">
-          <h3 style="margin:0 0 10px">Why It Matters</h3>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <h2>Why Biometrics?</h2>
+        <div class="card">
+          <p>Current card‑based entry systems are easy to lose or share, reducing security. A biometric system ensures that only the authorized person gains access, making campus life both safer and more efficient. The design protects privacy through encrypted templates rather than raw images.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="wrap">
+        <h2>Privacy & Ethics</h2>
+        <div class="card">
           <ul>
-            <li>Faster and more reliable than ID cards.</li>
-            <li>Reduces the risk of lost or shared credentials.</li>
-            <li>Saves time for students and staff.</li>
-            <li>Respects student privacy through encrypted, non‑reconstructable data templates.</li>
+            <li>Encrypted biometric templates, never raw images.</li>
+            <li>Opt‑in participation with full transparency.</li>
+            <li>Annual audits to ensure privacy and fairness.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- WHY BIOMETRICS -->
-    <section id="why">
-      <div class="wrap">
-        <h2 class="h">Why Biometrics?</h2>
-        <p class="sub">Replacing shared credentials with something unique to you.</p>
-        <div class="grid cols-2">
-          <div class="card pad">
-            <h3>The problem with current access systems</h3>
-            <p>Card‑based entry can be inconvenient and insecure. Cards are lost, borrowed, or cloned easily. PINs are forgotten or shared. These methods slow down access and fail to ensure that the right person enters each space.</p>
-          </div>
-          <div class="card pad">
-            <h3>The solution</h3>
-            <p>A biometric access system identifies the individual—not just what they carry. Modern systems don’t store your image, only a mathematical representation (a <em>template</em>) of your fingerprint or face. This template can’t be used to recreate your appearance.</p>
-          </div>
-        </div>
-        <div class="grid" style="margin-top:16px">
-          <div class="fact"><span aria-hidden="true">🔍</span><div><b>Myth:</b> Biometrics mean surveillance.<br><b>Fact:</b> This system only verifies identity at entry—no location tracking.</div></div>
-          <div class="fact"><span aria-hidden="true">🎯</span><div><b>Myth:</b> It’s mandatory.<br><b>Fact:</b> Enrollment is voluntary, with equal alternatives available.</div></div>
-          <div class="fact"><span aria-hidden="true">🛡️</span><div><b>Myth:</b> If hacked, my face is stolen.<br><b>Fact:</b> Templates are encrypted and non‑reversible.</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRIVACY & ETHICS -->
-    <section id="privacy">
-      <div class="wrap">
-        <h2 class="h">Privacy and Ethics</h2>
-        <p class="sub">Privacy isn’t optional—it’s built in from the start.</p>
-        <div class="grid cols-2">
-          <div class="card pad">
-            <h3>1) Data Minimization</h3>
-            <ul>
-              <li>Encrypted biometric template, not raw image.</li>
-              <li>Timestamped access events.</li>
-              <li>Anonymous ID tag (no personal identifiers stored with templates).</li>
-            </ul>
-          </div>
-          <div class="card pad">
-            <h3>2) Security Measures</h3>
-            <ul>
-              <li>Encryption at rest and in transit.</li>
-              <li>Role‑based access control for administrators.</li>
-              <li>Regular audits of who accesses data and why.</li>
-            </ul>
-          </div>
-          <div class="card pad">
-            <h3>3) Consent and Control</h3>
-            <ul>
-              <li>Participation is opt‑in.</li>
-              <li>Students can unenroll anytime; templates are deleted within 24 hours.</li>
-              <li>Clear explanations at every step.</li>
-            </ul>
-          </div>
-          <div class="card pad">
-            <h3>4) Transparency and Oversight</h3>
-            <ul>
-              <li>Annual transparency reports published online.</li>
-              <li>Student–Faculty Oversight Board ensures compliance.</li>
-              <li>Independent privacy audits verify system integrity.</li>
-            </ul>
-          </div>
-          <div class="card pad">
-            <h3>5) Fairness and Accessibility</h3>
-            <ul>
-              <li>Testing for bias across demographics.</li>
-              <li>Alternatives for those whose biometrics don’t work reliably.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROLLOUT PLAN -->
     <section id="rollout">
       <div class="wrap">
-        <h2 class="h">FSU Rollout Plan</h2>
-        <p class="sub">Structured phases with clear success metrics and rollback triggers.</p>
-        <div class="timeline">
-          <div class="step">
-            <h3>Phase 1: Pilot (Fall)</h3>
-            <ul>
-              <li><b>Locations:</b> One dorm, one computer lab, and Leach Center turnstiles.</li>
-              <li><b>Enrollment:</b> 100% voluntary.</li>
-              <li><b>Alternatives:</b> NFC cards available at every pilot site.</li>
-              <li><b>Evaluation:</b> Efficiency, satisfaction, bias testing, and privacy metrics.</li>
-              <li><b>Reporting:</b> Monthly transparency updates.</li>
-            </ul>
-          </div>
-          <div class="step">
-            <h3>Phase 2: Evaluation (Winter)</h3>
-            <ul>
-              <li>Independent audit of privacy safeguards.</li>
-              <li>Adjust retention periods and policies based on student feedback.</li>
-              <li>Upgrade to on‑device verification where possible.</li>
-            </ul>
-          </div>
-          <div class="step">
-            <h3>Phase 3: Expansion (Spring)</h3>
-            <ul>
-              <li>Only if pilot success metrics are met.</li>
-              <li>Oversight board vote required before expansion.</li>
-              <li>Continued opt‑in participation and full alternative options.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid cols-3" style="margin-top:18px">
-          <div class="stat">
-            <div class="num">40%+</div>
-            <div class="lab">Average entry time reduced</div>
-          </div>
-          <div class="stat">
-            <div class="num">0</div>
-            <div class="lab">Unauthorized access incidents (pilot goal)</div>
-          </div>
-          <div class="stat">
-            <div class="num">85%+</div>
-            <div class="lab">Positive trust survey results</div>
-          </div>
-        </div>
-
-        <div class="card pad" style="margin-top:18px">
-          <h3>Rollback Triggers</h3>
-          <p>If audits fail or privacy rules are broken, the system pauses immediately and reverts to card access.</p>
+        <h2>FSU Rollout Plan</h2>
+        <div class="card">
+          <p>Pilot programs begin in selected dorms and facilities with voluntary enrollment, supported by NFC card alternatives. Performance and privacy audits determine future expansion.</p>
         </div>
       </div>
     </section>
 
-    <!-- GET INVOLVED -->
     <section id="involved">
       <div class="wrap">
-        <h2 class="h">Get Involved</h2>
-        <p class="sub">Your voice matters—help shape how this project evolves.</p>
-        <div class="grid cols-2">
-          <div class="card pad">
-            <h3>Ways to participate</h3>
-            <ol>
-              <li><b>Sign the Support Letter:</b> Show that students care about safe, ethical innovation.</li>
-              <li><b>Join the Feedback Team:</b> Offer suggestions or privacy improvements.</li>
-              <li><b>Volunteer for the Pilot:</b> Be one of the first to test and evaluate the new access system.</li>
-            </ol>
-            <div class="cta">
-              <a class="btn" href="#" aria-disabled="true">Sign the Letter</a>
-              <a class="btn alt" href="#" aria-disabled="true">Join Feedback</a>
-              <a class="btn alt" href="#" aria-disabled="true">Volunteer</a>
-            </div>
-          </div>
-          <div class="card pad">
-            <h3>Upcoming Events</h3>
-            <ul>
-              <li><b>Digital Studio Open Forum</b> – Demo and Q&amp;A (Date TBD)</li>
-              <li><b>Virtual Policy Discussion</b> – Review our privacy document line‑by‑line (Date TBD)</li>
-            </ul>
-            <h3 style="margin-top:18px">Contact</h3>
-            <p>Have a question, concern, or suggestion? Send a message:</p>
-            <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll reply in 2–3 days.');" aria-label="Contact form">
-              <label>Name<br/><input required type="text" placeholder="Your name" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)"></label>
-              <br/><br/>
-              <label>Email<br/><input required type="email" placeholder="you@fsu.edu" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)"></label>
-              <br/><br/>
-              <label>Message<br/><textarea required rows="5" placeholder="How can we help?" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)"></textarea></label>
-              <br/><br/>
-              <button class="btn" type="submit">Send</button>
-              <br/>
-              <label>Attach media (optional)<br/>
-                <input type="file" accept="image/*,audio/*,application/pdf" style="width:100%; padding:10px; border-radius:10px; border:1px solid var(--ring); background:#3b0c1c; color:var(--text)">
-              </label>
-              <br/><br/>
-              <button class="btn" type="submit">Send</button>
-            </form>
-          </div>
+        <h2>Get Involved</h2>
+        <div class="card">
+          <p>Students and faculty can sign support letters, join the feedback team, or participate in pilot testing. Contact us with your feedback.</p>
+          <form onsubmit="event.preventDefault();alert('Thank you! Your feedback was received.');">
+            <label>Name<br><input type="text" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--ring);background:var(--panel);color:var(--text)"></label><br><br>
+            <label>Email<br><input type="email" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--ring);background:var(--panel);color:var(--text)"></label><br><br>
+            <label>Message<br><textarea rows="5" style="width:100%;padding:8px;border-radius:8px;border:1px solid var(--ring);background:var(--panel);color:var(--text)"></textarea></label><br><br>
+            <button class="btn" style="padding:10px 16px;border:none;border-radius:8px;background:var(--accent);color:#3b0c1c;font-weight:700;cursor:pointer;">Send</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <!-- RESOURCES -->
     <section id="resources">
       <div class="wrap">
-        <h2 class="h">Resources</h2>
-        <p class="sub">Further reading on biometrics and privacy.</p>
-        <div class="resource card">
-          <strong>Electronic Frontier Foundation (EFF).</strong> “Biometrics and Privacy.”
-          <div><a href="https://www.eff.org/issues/biometrics" target="_blank" rel="noopener">eff.org/issues/biometrics</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MULTIMODAL: Watch & Listen -->
-    <section id="media">
-      <div class="wrap">
-        <h2 class="h">Watch & Listen</h2>
-        <p class="sub">Short video explainer, student voices, and media gallery. (Upload your own files to the repo root as noted below.)</p>
-        <div class="media-grid">
-          <div class="player card">
-            <h3 style="margin:12px 16px 0">Campus Access Explainer (Video)</h3>
-            <!-- Upload a file named campus.mp4 and optional poster campus-poster.jpg -->
-            <video controls preload="metadata" style="width:100%;border-bottom-left-radius:14px;border-bottom-right-radius:14px;display:block" poster="campus-poster.jpg">
-              <source src="campus.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="player card pad">
-            <h3>YouTube Overview</h3>
-            <!-- Replace the src with your own YouTube video ID -->
-            <div class="embed" style="padding:0;border:none;background:transparent">
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <p class="sub" style="margin-top:8px">Swap the video by changing the <code>src</code> to your own YouTube link.</p>
-          </div>
-          <div class="player card pad">
-            <h3>Student Voices (Audio)</h3>
-            <!-- Upload student-voices.mp3 to repo root -->
-            <audio controls preload="none" style="width:100%">
-              <source src="student-voices.mp3" type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
-            <p class="sub">Short clips describing convenience, safety, and privacy expectations.</p>
-          </div>
-          <div class="download card pad">
-            <h3>Download: Privacy Whitepaper (PDF)</h3>
-            <!-- Upload privacy-policy.pdf to repo root -->
-            <p>Details on the data flow, retention limits, and deletion guarantees.</p>
-            <a class="btn" href="privacy-policy.pdf" download>Download PDF</a>
-          </div>
-        </div>
-
-        <h3 style="margin-top:26px">Image Gallery</h3>
-        <p class="sub">Campus spaces and prototype kiosks. Click an image to open full size.</p>
-        <div class="gallery">
-          <figure>
-            <!-- Upload gallery-1.jpg -->
-            <img src="gallery-1.jpg" alt="Dorm lobby turnstiles prototype" loading="lazy" onclick="window.open(this.src,'_blank')">
-            <figcaption>Dorm lobby prototype</figcaption>
-          </figure>
-          <figure>
-            <img src="gallery-2.jpg" alt="Leach Center entry" loading="lazy" onclick="window.open(this.src,'_blank')">
-            <figcaption>Leach Center entry</figcaption>
-          </figure>
-          <figure>
-            <img src="gallery-3.jpg" alt="Computer lab check-in station" loading="lazy" onclick="window.open(this.src,'_blank')">
-            <figcaption>Computer lab check‑in</figcaption>
-          </figure>
+        <h2>Resources</h2>
+        <div class="card">
+          <p><strong>Electronic Frontier Foundation (EFF).</strong> “Biometrics and Privacy.”
+          <br><a href="https://www.eff.org/issues/biometrics" target="_blank" style="color:var(--accent)">eff.org/issues/biometrics</a></p>
         </div>
       </div>
     </section>
@@ -399,8 +121,8 @@
 
   <footer>
     <div class="wrap">
-      <div>© <span id="year"></span> Safer FSU: Biometrics Done Right • Security with respect for privacy.</div>
-      <div style="margin-top:6px">Built for an FSU advocacy project by Franklin WuFeng‑fw24d.</div>
+      <p>© <span id="year"></span> Safer FSU: Biometrics Done Right • Security with respect for privacy.</p>
+      <p>Built for an FSU advocacy project by Franklin WuFeng‑fw24d.</p>
     </div>
   </footer>
 
